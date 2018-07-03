@@ -1,0 +1,51 @@
+{
+  "name": "@zept/redux",
+  "version": "0.0.1",
+  "private": true,
+  "description": "Redux package for Zept applications",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ZeptInc/ZeptRedux.git"
+  },
+  "author": "",
+  "license": "UNLICENSED",
+  "homepage": "https://test.com",
+  "main": "./src/index.ts",
+  "jest": {
+    "moduleFileExtensions": [
+      "ts",
+      "tsx",
+      "js"
+    ],
+    "transform": {
+      "\\.(ts|tsx)$": "<rootDir>/node_modules/ts-jest/preprocessor.js"
+    },
+    "testRegex": ".*\\.test\\.(ts|tsx|js)$"
+  },
+  "scripts": {
+    "//build": "npm run clean:build && tsc --declaration",
+    "//clean:build": "del-cli dist/**/* && del-cli dist/**/*.*",
+    "//clean:dev-webapp": "del-cli ../ZeptWeb/src/Web/node_modules/zept-redux/dist/**/*",
+    "//dev-webapp": "tsc --declaration --outDir ../ZeptWeb/src/Web/node_modules/zept-redux/dist && tsc --declaration --outDir ../ZeptWeb/src/Web/node_modules/zept-redux/dist -w",
+    "dev-webapp": "cpx 'src/**/*!(test.).*' '../ZeptWeb/src/Web/src/redux-temp/' --clean --watch",
+    "style-code": "tslint -c tslint.json 'src/**/*{.ts,.tsx}' --fix",
+    "test": "jest --watch"
+  },
+  "devDependencies": {
+    "@types/jest": "^23.1.2",
+    "@types/node": "^10.5.0",
+    "@types/react": "^16.4.5",
+    "@types/react-redux": "^6.0.3",
+    "enzyme": "^3.3.0",
+    "jest": "^23.2.0",
+    "ts-jest": "^22.4.6",
+    "tslint": "^5.10.0",
+    "tslint-react": "^3.6.0",
+    "typescript": "^2.9.2"
+  },
+  "dependencies": {
+    "react": "^16.4.1",
+    "react-redux": "^5.0.7",
+    "testcheck": "^1.0.0-rc.2"
+  }
+}
