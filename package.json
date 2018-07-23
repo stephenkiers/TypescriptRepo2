@@ -23,13 +23,7 @@
     "testRegex": ".*\\.test\\.(ts|tsx|js)$"
   },
   "scripts": {
-    "//build": "npm run clean:build && tsc --declaration",
-    "//clean:build": "del-cli dist/**/* && del-cli dist/**/*.*",
-    "//clean:dev-webapp": "del-cli ../ZeptWeb/src/Web/node_modules/zept-redux/dist/**/*",
-    "//dev-webapp": "tsc --declaration --outDir ../ZeptWeb/src/Web/node_modules/zept-redux/dist && tsc --declaration --outDir ../ZeptWeb/src/Web/node_modules/zept-redux/dist -w",
-    "dev-webapp": "cpx 'src/**/*!(test.).*' '../ZeptWeb/src/Web/src/redux-temp/' --clean --watch",
-    "style-code": "tslint -c tslint.json 'src/**/*{.ts,.tsx}' --fix",
-    "test": "jest --watch"
+    "build": "tsc --declaration --outDir ./dist"
   },
   "devDependencies": {
     "@types/jest": "^23.1.2",
